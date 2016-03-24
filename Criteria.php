@@ -1,5 +1,5 @@
 <?php
-namespace App\Component;
+namespace Phalcon\Query;
 
 use Phalcon\Filter;
 use App\Filter\Split;
@@ -29,6 +29,18 @@ class Criteria
         $this->request = $this->_di->get('request');
     }
 
+    /**
+     * @example
+     *   $input = $request->getQuery();
+     *   $input = $crop->trim($input, $rule);
+     *   $query = $criteria->getQuery($input);
+     *   $items = $model->find($query);
+     *
+     *
+     * @param array $rules
+     * @param array $keys
+     * @return mixed
+     */
     public function conditions($rules = [], $keys = [])
     {
         /**
